@@ -1,0 +1,154 @@
+<div *ngIf="isJoin===0">
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                    <form (ngSubmit)="onSubmit()">
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <input type="email" id="form3Example3" class="form-control form-control-lg"
+                                placeholder="Enter a valid room name" [(ngModel)]="credentials.roomUsername"
+                                name="roomUsername" />
+                            <!-- <label class="form-label" for="form3Example3">Email address</label> -->
+                        </div>
+                        <!-- Password input -->
+                        <div class="form-outline mb-3">
+                            <input type="password" id="form3Example4" class="form-control form-control-lg"
+                                placeholder="Enter password" [(ngModel)]="credentials.roomPassword"
+                                name="roomPassword" />
+                            <!-- <label class="form-label" for="form3Example4">Password</label> -->
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <!-- Checkbox -->
+                            <div class="form-check mb-0">
+                                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                                <label class="form-check-label" for="form2Example3">
+                                    Remember me
+                                </label>
+                            </div>
+                            <a href="#!" class="text-body">Forgot password?</a>
+                        </div>
+
+                        <div class="text-center text-lg-start mt-4 pt-2">
+                            <button type="submit" class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
+                                    class="link-danger">Register</a></p>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<div *ngIf="isJoin===1">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                
+                    <h6 (click)="RoomDetails()" class="m-0 font-weight-bold text-primary">Room details</h6>
+                
+            </div>
+            
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Office</th>
+                                <th>Age</th>
+                                <th>Start date</th>
+                                <th>Salary</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tiger Nixon</td>
+                                <td>System Architect</td>
+                                <td>Edinburgh</td>
+                                <td>61</td>
+                                <td>2011/04/25</td>
+                                <td>$320,800</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</div>
+
+<div *ngIf="isJoin===3">
+    <div class="container">
+        <div class="main-body">
+                <div class="col-md-8">
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Room Id</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          {{roomDetails.roomId}}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Room Name</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          {{roomDetails.roomName}}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Purpose</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          {{roomDetails.purpose}}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">created by</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          {{roomDetails.createdBy}}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Date of created</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          {{roomDetails.creationDate}}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                    
+                
+    
+            </div>
+        </div>
+</div>
