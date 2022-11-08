@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RoomServicesService {
+  
 
   constructor(private httpClient: HttpClient) { }
 
@@ -22,8 +23,17 @@ export class RoomServicesService {
     
     // const body = JSON.stringify(credentials)
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=UTF-8'}) };
-    console.log('Api call generate for spring boot.. wait for response...! for ');
+    console.log('Api call generated for spring boot.. wait for response...!');
     return this.httpClient.post<any>(loginUrl,credentials, httpOptions);
+  }
+
+  // create room
+  Register(credentialsForRegister: { roomName: string; roomPassword: string; roomDesc: string; roomType: string; }) {
+    const registerUrl = `${this.baseUrl}/room/create`;
+    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=UTF-8'}) };
+    console.log("Api call generated for spring boot.. wait for response...!");
+    alert(JSON.stringify(credentialsForRegister));
+    return this.httpClient.post<any>(registerUrl,JSON.stringify(credentialsForRegister),httpOptions);
   }
 
 }

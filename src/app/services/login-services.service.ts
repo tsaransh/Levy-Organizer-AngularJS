@@ -16,7 +16,14 @@ export class LoginServicesService {
 
   doLogin(credentials: any): Observable<any> {
     const dataUrl = `${this.baseUrl}/user/login`;
-    console.log('Api call generate for spring boot.. wait for response...! for '+ credentials)
+    console.log('Api call generate for spring boot.. wait for response...!');
     return this.httpClient.post<any>(dataUrl,credentials);
   }
+
+  createAnAccount(credentials: any) {
+    const dataUrl = `${this.baseUrl}/user/add`;
+    console.log("Api call generate for spring boot.. wait for response...!");
+    return this.httpClient.post<any>(dataUrl,credentials);
+  }
+
 }

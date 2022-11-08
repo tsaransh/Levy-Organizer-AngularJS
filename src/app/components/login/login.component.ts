@@ -11,6 +11,16 @@ import { LoginServicesService } from 'src/app/services/login-services.service';
 @Injectable()
 export class LoginComponent implements OnInit {
 
+  isLogin: number=0;
+
+  credentialsForSignUp = {
+    firstName:'',
+    lastName:'',
+    email:'',
+    password:'',
+    phonenumber:''
+  }
+
   constructor(private loginServices: LoginServicesService) { }
   // userDetails: UserDetails = new UserDetails();
   credentials = {
@@ -34,6 +44,26 @@ export class LoginComponent implements OnInit {
       },
       error: err => {
         alert(`Incorrct Username and password`)
+      }
+  })
+  }
+
+  createAccount() {
+    this.isLogin = 1;
+  }
+
+  signUp() {
+    this.loginServices.createAnAccount(this.credentials).subscribe({
+      next: Response => {
+        if(Response!=null) {
+          this.loginServices.userDetails = Response as UserDetails
+          // window.location.href="/login"
+          // this.appComp.isAuth=true;
+          this.isLogin = 0;
+        }
+      },
+      error: err => {
+        alert(`something went wrong!`)
       }
   })
   }
