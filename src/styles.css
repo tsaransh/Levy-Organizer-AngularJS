@@ -2585,7 +2585,8 @@ textarea.form-control.is-invalid {
 .form-inline {
     display: flex;
     flex-flow: row wrap;
-    align-items: center
+    align-items: center;
+    margin-right: auto;
 }
 
 .form-inline .form-check {
@@ -8881,7 +8882,7 @@ button.bg-dark:hover {
 
 .ml-auto,
 .mx-auto {
-    margin-left: auto !important
+    margin-left: auto;
 }
 
 @media (min-width:576px) {
@@ -11109,7 +11110,8 @@ a:focus {
 .bg-gradient-primary {
     background-color: #4e73df;
     background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
-    background-size: cover
+    background-size: cover;
+    margin-top: -40px
 }
 
 .bg-gradient-secondary {
@@ -11404,15 +11406,16 @@ a:focus {
     width: 0;
     border-right: 1px solid #e3e6f0;
     height: calc(4.375rem - 2rem);
-    margin: auto 1rem;
-    margin-top: -40px;
+    /* margin: auto 1rem; */
+    margin-top: -116px;
 }
 
 .topbar .nav-item .nav-link {
     height: 4.375rem;
     display: flex;
     align-items: center;
-    padding: 0 .75rem
+    padding: 0 .75rem;
+    margin-top: -40px;
 }
 
 .topbar .nav-item .nav-link:focus {

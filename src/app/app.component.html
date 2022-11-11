@@ -1,111 +1,107 @@
-<div *ngIf="isAuth===false">
-  <app-login></app-login>
-</div>
+
 <!-- Page Wrapper -->
-<div *ngIf="isAuth===true">
-  <div id="wrapper">
 
-    <!-- Sidebar -->
-    <ul class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar">
+<div id="wrapper">
 
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">
-          <a routerLink="/dashboard"> Levy Organizer </a>
-        </div>
+  <!-- Sidebar -->
+  <ul class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <div class="sidebar-brand-icon rotate-n-15">
+        <i class="fas fa-laugh-wink"></i>
+      </div>
+      <div class="sidebar-brand-text mx-3">
+        <a routerLink="/dashboard"> Levy Organizer </a>
+      </div>
+    </a>
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+      <a class="nav-link" href="/dashboard">
+        <span> Dashboard</span></a>
+    </li>
+
+
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item active">
+      <a class="nav-link" routerLink="/expanse-room">
+        <span>Expense room</span>
       </a>
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="/dashboard">
-
-          <span> Dashboard</span></a>
-      </li>
+    </li>
 
 
 
-      <!-- Nav Item - Tables -->
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/expanse-room">
-          <span>Expense room</span>
-        </a>
-      </li>
+    <!-- Nav Item - Charts -->
+    <li class="nav-item active">
+      <a class="nav-link" href="charts.html">
+        <span>Charts</span></a>
+    </li>
+
+    <li class="nav-item active">
+      <a class="nav-link" href="#">
+        <span>Benefits</span></a>
+    </li>
+
+    <li class="nav-item active">
+      <a class="nav-link" href="#">
+
+        <span>Features</span></a>
+    </li>
+
+    <li class="nav-item active">
+      <a target="_blank" class="nav-link" href="https://tsaransh.netlify.app">
+
+        <span>About Us</span></a>
+    </li>
 
 
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item active">
-        <a class="nav-link" href="charts.html">
-          <span>Charts</span></a>
-      </li>
-
-      <li class="nav-item active">
-        <a class="nav-link" href="#">
-          <span>Benefits</span></a>
-      </li>
-
-      <li class="nav-item active">
-        <a class="nav-link" href="#">
-
-          <span>Features</span></a>
-      </li>
-
-      <li class="nav-item active">
-        <a target="_blank" class="nav-link" href="https://tsaransh.netlify.app">
-
-          <span>About Us</span></a>
-      </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="/contactus">
+        <span>Contact Us</span></a>
+    </li>
 
 
-      <li class="nav-item active">
-        <a class="nav-link" href="/contactus">
-          <span>Contact Us</span></a>
-      </li>
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+      <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+
+  </ul>
+  <!-- End of Sidebar -->
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+
+      <!-- Topbar -->
+      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+        <!-- Sidebar Toggle (Topbar) -->
+        <form class="form-inline">
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+        </form>
 
 
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
+        <!-- Topbar Navbar -->
 
-    </ul>
-    <!-- End of Sidebar -->
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-      <!-- Main Content -->
-      <div id="content">
-
-        <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-          <!-- Sidebar Toggle (Topbar) -->
-          <form class="form-inline">
-            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-              <i class="fa fa-bars"></i>
-            </button>
-          </form>
+        <!-- Nav Item - Alerts -->
+        
+          <app-top-bar></app-top-bar>
+       
 
 
-          <!-- Topbar Navbar -->
+      </nav>
+      <!-- End of Topbar -->
 
-          <!-- Nav Item - Alerts -->
-          <ul class="navbar-nav ml-auto">
-            <app-top-bar></app-top-bar>
-          </ul>
+      <!-- main content -->
+      <router-outlet></router-outlet>
 
-
-        </nav>
-        <!-- End of Topbar -->
-
-        <!-- main content -->
-        <router-outlet></router-outlet>
-
-      </div>
     </div>
   </div>
 </div>

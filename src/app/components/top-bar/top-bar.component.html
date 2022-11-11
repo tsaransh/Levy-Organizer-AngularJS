@@ -1,15 +1,23 @@
-
-    <div class="topbar-divider d-none d-sm-block"></div>
-
-    <!-- Nav Item - User Information -->
+<!-- Nav Item - User Information -->
+<ul class="navbar-nav ml-auto">
+    <li class="nav-item dropdown no-arrow login-logout">
+        <div *ngIf="!user">
+            <button class="btn" routerLink="/login">Login</button>
+        </div>
+        <div *ngIf="user">
+            <button class="btn" routerLink="/logout">Logout</button>
+        </div>
+    </li>
+</ul>
+<ul class="navbar-nav ml-auto" *ngIf="user">
     <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" routerLink="/profile" id="userDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{userFirstName}}</span>
+            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{user.firstName}}</span>
             <img class="img-profile rounded-circle" src="assets/images/undraw_profile.svg">
         </a>
         <!-- Dropdown - User Information -->
-        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+        <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
             <a class="dropdown-item" href="#">
                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                 Profile
@@ -27,5 +35,6 @@
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                 Logout
             </a>
-        </div>
+        </div> -->
     </li>
+</ul>

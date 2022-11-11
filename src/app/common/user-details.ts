@@ -1,6 +1,8 @@
+import { last } from "rxjs";
+
 export class UserDetails {
 
-    private userId!: number;
+    private userId!: string;
     private firstName!: string;
     private lastName!: string;
     private phoneNumber!: string;
@@ -8,8 +10,15 @@ export class UserDetails {
     private userPassword!: string;
     private creationDate!: string;
 
-    getUserFirstName() {
-        return this.firstName;
-    }
+    // constructor(userId: number,firstName: string, lastName: string,
+    //     phoneNumber: string, username: string, userPassword: string, creationDate: string) {
+    //         this.userId = userId;
+    //         this.firstName = firstName;
+    //         this.lastName = lastName;
+    //         this.phoneNumber = phoneNumber;
+    //         this.username = username;
+    //         this.userPassword = userPassword;
+    //         this.creationDate = creationDate;
+    // }
 
 }

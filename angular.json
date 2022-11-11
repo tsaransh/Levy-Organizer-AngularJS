@@ -92,7 +92,11 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "assets/javascripts/sb-admin-2.min.js"
+            ]
           }
         }
       }

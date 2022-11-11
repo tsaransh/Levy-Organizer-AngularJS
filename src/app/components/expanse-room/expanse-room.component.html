@@ -1,4 +1,4 @@
-<div *ngIf="isJoin===0">
+<div *ngIf="isJoin==='0'">
   <section class="vh-100">
     <div class="container-fluid h-custom">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -43,49 +43,22 @@
 </div>
 
 
-<div *ngIf="isJoin===1">
+<div *ngIf="isJoin==='1'">
   <!-- Begin Page Content -->
   <div class="container-fluid">
-    <!-- DataTales Example -->
-    <div class="card1 shadow mb-4">
-      <div class="card-header py-3">
-
-        <h6 (click)="RoomDetails()" class="m-0 font-weight-bold text-primary">Room details</h6>
-
-      </div>
-
-      <div class="card-body">
-        <div class="table-responsive">
-          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>$320,800</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+    <button class="btn1" (click)="logout()">logout</button>
+    <!-- room Details Start -->
+    <div class="row">
+      g0kj1-,,etTotalRoomExp();  
     </div>
-  </div>
-  <!-- /.container-fluid -->
-</div>
+    
+    </div>
 
-<div *ngIf="isJoin===2">
+  </div>
+  <!-- end -->
+
+
+<div *ngIf="isJoin==='2'">
   <div>
     <img (click)="goBack()" src="assets/images/levybackbtn.png" class="img">
   </div>
@@ -153,7 +126,7 @@
   </div>
 </div>
 
-<div *ngIf="isJoin===3">
+<div *ngIf="isJoin==='3'">
 
   <div class="container">
 
@@ -175,7 +148,7 @@
                       class="form-control form-control-user" id="exampleFirstName" placeholder="Room Name">
                   </div>
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" [(ngModel)]="credentialsForRegister.roomPassword" name="roomPassword"
+                    <input type="password" [(ngModel)]="credentialsForRegister.roomPlainPassword" name="roomPassword"
                       class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                   </div>
                 </div>
@@ -185,14 +158,14 @@
                 </div> -->
                 <div class="form-group row">
                   <div class="col-sm-6">
-                    <input type="text" [(ngModel)]="credentialsForRegister.roomDesc" name="roomDesc"
+                    <input type="text" [(ngModel)]="credentialsForRegister.roomPurpose" name="roomPurpose"
                       class="form-control form-control-user" id="exampleLastName" placeholder="Purpose">
                   </div>
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <!-- <input type="password" class="form-control form-control-user" id="exampleInputPassword"
                       placeholder="Password"> -->
                     <label for="grpType">Group Type:</label>
-                    <select [(ngModel)]="credentialsForRegister.roomType" name="groupType">
+                    <select [(ngModel)]="credentialsForRegister.roomType" name="roomType">
                       <option [defaultSelected]="true">Plain</option>
                       <option>Custom</option>
                     </select>

@@ -11,13 +11,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { ExpanseRoomComponent } from './components/expanse-room/expanse-room.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { LogoutComponent } from './components/logout/logout.component';
+
 
 
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'login', component: LoginComponent },
   {path: 'contactus', component: ContactusComponent },
-  {path: 'expanse-room', component: ExpanseRoomComponent}
+  {path: 'expanse-room', component: ExpanseRoomComponent},
+  {path: 'logout', component: LogoutComponent}
 ]
 
 @NgModule({
@@ -28,6 +32,8 @@ const routes: Routes = [
     LoginComponent,
     TopBarComponent,
     ExpanseRoomComponent,
+    ProfileComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

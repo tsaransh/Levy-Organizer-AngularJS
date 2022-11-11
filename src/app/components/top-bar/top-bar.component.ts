@@ -11,10 +11,11 @@ export class TopBarComponent implements OnInit {
 
   constructor(private loginServices: LoginServicesService) { }
 
-  userFirstName: string = 'saransh';
+  user: any;
+
   ngOnInit(): void {
-   // this.userFirstName = this.loginServices.userDetails.getUserFirstName();
-    
+    let data: any = localStorage.getItem('userDetailsFromDb');
+    this.user = JSON.parse(data);
   }
 
 }

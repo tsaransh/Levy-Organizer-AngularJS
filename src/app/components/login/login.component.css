@@ -8,17 +8,21 @@
     background-clip: border-box;
     border: 1px solid #e3e6f0;
     border-radius: 0.35rem;
-    margin-left: -350px;
-    margin-right: -300px;
+    margin-left: -250px;
+    margin-right: -250px;
 }
-.form-group {
-    margin-bottom: 1rem;
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
     margin-right: auto;
-    margin-left: auto;
+    margin-left: inherit;
+    margin-bottom: 10px;
 }
-.container {
-    flex: 0 1 700px;
-    margin: auto;
-    padding: 10px;
-    margin-top: -30px;
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+    margin: initial;
 }

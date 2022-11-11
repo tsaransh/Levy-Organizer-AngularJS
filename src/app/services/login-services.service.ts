@@ -10,8 +10,6 @@ export class LoginServicesService {
 
   constructor(private httpClient: HttpClient) { }
 
-  userDetails: UserDetails = new UserDetails();
-
   private baseUrl: string = "http://localhost:8080/api";
 
   doLogin(credentials: any): Observable<any> {

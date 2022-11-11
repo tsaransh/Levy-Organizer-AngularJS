@@ -11,14 +11,14 @@ import { LoginServicesService } from 'src/app/services/login-services.service';
 @Injectable()
 export class LoginComponent implements OnInit {
 
-  isLogin: number=0;
+  isLogin!: any;
 
   credentialsForSignUp = {
     firstName:'',
     lastName:'',
-    email:'',
-    password:'',
-    phonenumber:''
+    username:'',
+    userPlainPassword:'',
+    phoneNumber:''
   }
 
   constructor(private loginServices: LoginServicesService) { }
@@ -26,20 +26,28 @@ export class LoginComponent implements OnInit {
   credentials = {
     username:'',
     password:''
-  }
-
-  appComp: AppComponent = new AppComponent();
+  }  
 
   ngOnInit(): void {
+    if(localStorage.getItem('isLogin')==null) {
+      localStorage.setItem('isLogin','0');
+    }
+    else if(localStorage.getItem('isLogin')=='2') {
+      window.location.href="/dashboard";
+    }
+    else {
+      this.isLogin = localStorage.getItem('isLogin');
+    }
   }
 
   onSubmit() {
     this.loginServices.doLogin(this.credentials).subscribe({
       next: Response => {
         if(Response!=null) {
-          this.loginServices.userDetails = Response as UserDetails
-          window.location.href="/dashboard"
-          this.appComp.isAuth=true;
+          // this.userDetails = Response as UserDetails
+          localStorage.setItem('userDetailsFromDb',JSON.stringify(Response));
+          localStorage.setItem('isLogin','2');
+          window.location.href="/dashboard";
         }
       },
       error: err => {
@@ -49,17 +57,28 @@ export class LoginComponent implements OnInit {
   }
 
   createAccount() {
-    this.isLogin = 1;
+    localStorage.setItem('isLogin','1')
+    window.location.href="/login"
+  }
+
+  login() {
+    localStorage.setItem('isLogin','0')
+    window.location.href="/dashboard";
   }
 
   signUp() {
-    this.loginServices.createAnAccount(this.credentials).subscribe({
+    console.log(this.credentialsForSignUp);
+    this.loginServices.createAnAccount(this.credentialsForSignUp).subscribe({
       next: Response => {
         if(Response!=null) {
-          this.loginServices.userDetails = Response as UserDetails
+          // this.userDetails = Response as UserDetails
           // window.location.href="/login"
           // this.appComp.isAuth=true;
-          this.isLogin = 0;
+          localStorage.setItem('isLogin','0')
+          window.location.href="/login";
+        }
+        else {
+          alert("Please enter a valid data");
         }
       },
       error: err => {
